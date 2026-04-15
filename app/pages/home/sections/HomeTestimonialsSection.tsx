@@ -41,7 +41,7 @@ const testimonials: Testimonial[] = [
     quoteSecondary: " Our teams execute faster, and leadership decisions are now grounded in shared metrics.”",
     author: "Daniel Carter",
     role: "Chief Operations Officer",
-    image: "/images/png/home-hero-main.png",
+    image: "/images/svg/home-hero-main.svg",
     imageAlt: "Client portrait with crossed arms",
     markWidth: 56,
     textWidth: 128,
@@ -116,6 +116,7 @@ export default function HomeTestimonialsSection() {
                 <div>
                   <div className="flex items-center gap-3">
                     <Image
+                      loading="eager"
                       src={item.companyMark}
                       alt=""
                       aria-hidden="true"
@@ -124,6 +125,7 @@ export default function HomeTestimonialsSection() {
                       className="h-14 w-auto"
                     />
                     <Image
+                      loading="eager"
                       src={item.companyText}
                       alt={item.company}
                       width={item.textWidth}
