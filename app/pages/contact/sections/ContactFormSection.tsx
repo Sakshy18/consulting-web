@@ -51,6 +51,25 @@ function MailIcon() {
   );
 }
 
+function UserIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 20 20"
+      className="pointer-events-none absolute left-5 top-1/2 h-5 w-5 -translate-y-1/2 text-[#6e737a]"
+      fill="none"
+    >
+      <circle cx="10" cy="6.5" r="2.75" stroke="currentColor" strokeWidth="1.4" />
+      <path
+        d="M4 15.75c0-2.35 2.69-4.25 6-4.25s6 1.9 6 4.25"
+        stroke="currentColor"
+        strokeWidth="1.4"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
 function getFieldErrorMessage(field: keyof ContactFormData, value: string): string {
   if (!value.trim()) {
     return "This field is required.";
@@ -186,7 +205,7 @@ export default function ContactFormSection() {
                   Full Name
                 </label>
                 <div className="relative">
-                  <MailIcon />
+                  <UserIcon />
                   <input
                     id="fullName"
                     name="fullName"
