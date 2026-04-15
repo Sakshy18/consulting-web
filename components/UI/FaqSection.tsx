@@ -70,7 +70,7 @@ export default function FaqSection() {
             </p>
 
             <Link
-              href="#"
+              href="/contact"
               className="mt-10 inline-flex items-center gap-2 text-[24px] leading-6 font-medium text-[#1a2e05] sm:text-[16px]"
             >
               Schedule a Call

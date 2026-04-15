@@ -44,7 +44,7 @@ export default function HomeNewsInsightSection() {
           </div>
 
           <Link
-            href="#"
+            href="/articles"
             className="inline-flex items-center gap-2 self-start rounded-full py-3 pr-5 text-[16px] leading-6 font-medium text-[#1a2e05]"
           >
             Explore More

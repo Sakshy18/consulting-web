@@ -47,7 +47,7 @@ export default function AboutStrategySection() {
           </p>
 
           <Link
-            href="#"
+            href="/contact"
             className="mt-10 inline-flex items-center gap-2 rounded-full border border-[#e8eaed] px-5 py-3 text-center text-[16px] leading-6 font-medium text-[#070a0f]"
           >
             Contact Us

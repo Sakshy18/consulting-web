@@ -42,7 +42,7 @@ export default function CtaSection() {
             </p>
 
             <Link
-              href="#"
+              href="/contact"
               className="mt-10 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-[16px] leading-6 font-medium text-[#1a2e05]"
             >
               Schedule a Strategy Call

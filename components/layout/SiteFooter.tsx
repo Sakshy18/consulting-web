@@ -3,35 +3,35 @@ import Link from "next/link";
 
 const quickLinks = [
   { label: "Home", href: "/" },
-  { label: "Services", href: "#" },
-  { label: "Blog", href: "#" },
+  { label: "Services", href: "/services" },
+  { label: "Blog", href: "/articles" },
 ];
 
 const companyLinks = [
-  { label: "About Us", href: "#" },
-  { label: "Contact Us", href: "#" },
-  { label: "Reviews", href: "#" },
+  { label: "About Us", href: "/about" },
+  { label: "Contact Us", href: "/contact" },
+  { label: "Reviews", href: "/case-studies" },
 ];
 
 const socialLinks = [
   {
     label: "Instagram",
-    href: "#",
+    href: "https://www.instagram.com/",
     icon: "/images/svg/icon-instagram.svg",
   },
   {
     label: "X",
-    href: "#",
+    href: "https://x.com/",
     icon: "/images/svg/icon-twitter.svg",
   },
   {
     label: "Facebook",
-    href: "#",
+    href: "https://www.facebook.com/",
     icon: "/images/svg/icon-facebook.svg",
   },
   {
     label: "LinkedIn",
-    href: "#",
+    href: "https://www.linkedin.com/",
     icon: "/images/svg/icon-linkedin.svg",
   },
 ];
@@ -67,6 +67,8 @@ export default function SiteFooter() {
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="rounded-full border border-[#373737] p-2.5 transition-colors hover:bg-[#151a22]"
                 >
                   <Image src={social.icon} alt="" aria-hidden="true" width={20} height={20} />
@@ -127,10 +129,10 @@ export default function SiteFooter() {
           <div className="flex flex-col gap-3 text-[16px] leading-6 text-[#95989e] sm:flex-row sm:items-center sm:justify-between">
             <p>Copyright © 2026 Execora. All Rights Reserved.</p>
             <div className="flex items-center gap-6">
-              <Link href="#" className="text-white transition-colors hover:text-[#d6d9de]">
+              <Link href="/privacy-policy" className="text-white transition-colors hover:text-[#d6d9de]">
                 Privacy Policy
               </Link>
-              <Link href="#" className="text-white transition-colors hover:text-[#d6d9de]">
+              <Link href="/terms-conditions" className="text-white transition-colors hover:text-[#d6d9de]">
                 Terms &amp; Conditions
               </Link>
             </div>

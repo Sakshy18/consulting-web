@@ -104,7 +104,7 @@ export default function ServicesGuidanceSection() {
               direction, optimize operations, and execute growth initiatives with confidence.
             </p>
             <Link
-              href="#"
+              href="/contact"
               className="mt-8 inline-flex items-center gap-2 rounded-full border border-[#e8eaed] px-5 py-3 text-center text-[16px] leading-6 font-medium text-[#070a0f]"
             >
               Schedule a Strategy Call
@@ -130,7 +130,7 @@ export default function ServicesGuidanceSection() {
                   </h3>
                   <p className="mt-2 text-[16px] leading-6 text-[#363435]">{feature.description}</p>
                   <Link
-                    href="#"
+                    href="/services"
                     className="mt-5 inline-flex items-center gap-2 text-[28px] leading-6 font-medium text-[#1a2e05] sm:text-[16px]"
                   >
                     {feature.cta}

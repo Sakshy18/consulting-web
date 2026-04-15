@@ -65,7 +65,7 @@ export default function HomeGrowthSection() {
             </p>
 
             <Link
-              href="#"
+              href="/contact"
               className="mt-8 inline-flex items-center gap-2 rounded-full text-[16px] leading-6 font-medium text-[#1a2e05]"
             >
               Book a Strategy Call
