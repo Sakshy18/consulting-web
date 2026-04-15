@@ -28,6 +28,7 @@ export default function ServicesGuidanceSection() {
       <div className="mx-auto flex w-full max-w-[1280px] flex-col gap-12 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
         <div className="relative h-[420px] w-full overflow-hidden rounded-[32px] sm:h-[520px] lg:h-[659px] lg:w-[572px] lg:rounded-[40px]">
           <Image
+          loading="eager"
             src="/images/png/services-guidance-main.png"
             alt="Consultant working at desk in office"
             fill
