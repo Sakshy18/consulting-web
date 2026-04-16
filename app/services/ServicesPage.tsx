@@ -1,6 +1,6 @@
-import ServicesGrowthSection from "./sections/ServicesGrowthSection";
-import ServicesScaleChecklistSection from "./sections/ServicesScaleChecklistSection";
-import ServicesGuidanceSection from "./sections/ServicesGuidanceSection";
+import ServicesGrowthSection from "./ServicesGrowthSection";
+import ServicesScaleChecklistSection from "./ServicesScaleChecklistSection";
+import ServicesGuidanceSection from "./ServicesGuidanceSection";
 import FaqSection from "@/components/UI/FaqSection";
 
 export default function ServicesPage() {

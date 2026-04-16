@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
-import ArticleDetailsPage from "@/app/pages/articles/ArticleDetailsPage";
-import { articles, getArticleBySlug } from "@/app/pages/articles/data/articles";
+import ArticleDetailsPage from "@/app/articles/ArticleDetailsPage";
+import { articles, getArticleBySlug } from "@/app/articles/articlesData";
 
 type ArticlePageProps = {
   params: Promise<{

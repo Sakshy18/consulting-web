@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import ArticleFavoriteButton from "./components/ArticleFavoriteButton";
-import { ArticleData, getArticlesBySlugs } from "./data/articles";
+import ArticleFavoriteButton from "./ArticleFavoriteButton";
+import { ArticleData, getArticlesBySlugs } from "./articlesData";
 
 type ArticleDetailsPageProps = {
   article: ArticleData;

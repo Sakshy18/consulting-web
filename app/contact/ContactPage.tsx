@@ -1,5 +1,5 @@
 import FaqSection from "@/components/UI/FaqSection";
-import ContactFormSection from "./sections/ContactFormSection";
+import ContactFormSection from "./ContactFormSection";
 
 export default function ContactPage() {
   return (

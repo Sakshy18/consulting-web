@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import { articles, featuredArticles } from "../data/articles";
+import { articles, featuredArticles } from "./articlesData";
 
 const AUTO_ROTATE_MS = 6000;
 

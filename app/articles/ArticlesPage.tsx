@@ -1,4 +1,4 @@
-import ArticlesInsightsSection from "./sections/ArticlesInsightsSection";
+import ArticlesInsightsSection from "./ArticlesInsightsSection";
 
 export default function ArticlesPage() {
   return (

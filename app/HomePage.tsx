@@ -1,13 +1,13 @@
 import FaqSection from "@/components/UI/FaqSection";
 import TeamSection from "@/components/UI/TeamSection";
 import CtaSection from "@/components/UI/CtaSection";
-import HomeHeroSection from "./sections/HomeHeroSection";
-import HomeGrowthSection from "./sections/HomeGrowthSection";
-import HomeNewsInsightSection from "./sections/HomeNewsInsightSection";
-import HomeServiceSection from "./sections/HomeServiceSection";
-import HomeStatsSection from "./sections/HomeStatsSection";
-import HomeTestimonialsSection from "./sections/HomeTestimonialsSection";
-import HomeTrustedPartnersSection from "./sections/HomeTrustedPartnersSection";
+import HomeHeroSection from "./HomeHeroSection";
+import HomeGrowthSection from "./HomeGrowthSection";
+import HomeNewsInsightSection from "./HomeNewsInsightSection";
+import HomeServiceSection from "./HomeServiceSection";
+import HomeStatsSection from "./HomeStatsSection";
+import HomeTestimonialsSection from "./HomeTestimonialsSection";
+import HomeTrustedPartnersSection from "./HomeTrustedPartnersSection";
 
 export default function HomePage() {
   return (

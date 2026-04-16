@@ -1,9 +1,9 @@
-import AboutHeroSection from "./sections/AboutHeroSection";
+import AboutHeroSection from "./AboutHeroSection";
 import TeamSection from "@/components/UI/TeamSection";
 import TrustedPartnersSection from "@/components/UI/TrustedPartnersSection";
-import AboutStrategySection from "./sections/AboutStrategySection";
-import AboutOperationalExcellenceSection from "./sections/AboutOperationalExcellenceSection";
-import AboutCtaSection from "./sections/AboutCtaSection";
+import AboutStrategySection from "./AboutStrategySection";
+import AboutOperationalExcellenceSection from "./AboutOperationalExcellenceSection";
+import AboutCtaSection from "./AboutCtaSection";
 import FaqSection from "@/components/UI/FaqSection";
 
 export default function AboutPage() {

@@ -1,4 +1,4 @@
-import ArticlesPage from "../pages/articles/ArticlesPage";
+import ArticlesPage from "./ArticlesPage";
 
 export default function Page() {
   return <ArticlesPage />;
