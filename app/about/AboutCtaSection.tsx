@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const avatarImages = [
   "/images/png/cta-avatar-1.png",
@@ -43,23 +46,31 @@ export default function AboutCtaSection() {
               you need to move from complexity to confident growth.
             </p>
 
-            <Link
-              href="/contact"
-              className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-[16px] leading-6 font-medium text-[#1a2e05] lg:mt-10"
-            >
-              Schedule a Strategy Call
-              <Image
-                src="/images/svg/icon-arrow-right.svg"
-                alt=""
-                aria-hidden="true"
-                width={20}
-                height={20}
-              />
-            </Link>
+            <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }} className="inline-flex">
+              <Link
+                href="/contact"
+                className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-[16px] leading-6 font-medium text-[#1a2e05] lg:mt-10"
+              >
+                Schedule a Strategy Call
+                <motion.span whileHover={{ x: 2 }} transition={{ duration: 0.2 }}>
+                  <Image
+                    src="/images/svg/icon-arrow-right.svg"
+                    alt=""
+                    aria-hidden="true"
+                    width={20}
+                    height={20}
+                  />
+                </motion.span>
+              </Link>
+            </motion.div>
           </div>
 
           <div className="order-1 grid w-full grid-cols-[minmax(0,1fr)_minmax(0,134px)] gap-2 lg:order-2 lg:max-w-[380px] lg:grid-cols-[1fr_auto]">
-            <article className="flex min-h-[159px] flex-col justify-between rounded-2xl bg-white/10 px-4 py-4 backdrop-blur-[23.4px] lg:min-h-[240px] lg:rounded-3xl lg:px-7 lg:py-6">
+            <motion.article
+              className="flex min-h-[159px] flex-col justify-between rounded-2xl bg-white/10 px-4 py-4 backdrop-blur-[23.4px] lg:min-h-[240px] lg:rounded-3xl lg:px-7 lg:py-6"
+              whileHover={{ y: -3, scale: 1.01 }}
+              transition={{ duration: 0.25 }}
+            >
               <div>
                 <p
                   className="text-[32px] leading-10 font-medium tracking-[-0.32px] text-white lg:text-[44px] lg:leading-none"
@@ -79,10 +90,14 @@ export default function AboutCtaSection() {
                 height={84}
                 className="mt-3 h-auto w-full max-w-[160px] lg:mt-5 lg:max-w-[188px]"
               />
-            </article>
+            </motion.article>
 
             <div className="flex flex-col gap-2">
-              <article className="rounded-2xl bg-white/10 p-3 backdrop-blur-[23.4px] lg:rounded-3xl lg:p-6">
+              <motion.article
+                className="rounded-2xl bg-white/10 p-3 backdrop-blur-[23.4px] lg:rounded-3xl lg:p-6"
+                whileHover={{ y: -3, scale: 1.01 }}
+                transition={{ duration: 0.25 }}
+              >
                 <div className="flex items-center pr-2.5">
                   {avatarImages.map((avatar) => (
                     <div key={avatar} className="-mr-2.5 h-8 w-8 lg:h-9 lg:w-9">
@@ -118,9 +133,13 @@ export default function AboutCtaSection() {
                     world-wide.
                   </span>
                 </p>
-              </article>
+              </motion.article>
 
-              <article className="rounded-2xl bg-white/10 px-4 py-3 lg:rounded-3xl lg:px-5 lg:py-4">
+              <motion.article
+                className="rounded-2xl bg-white/10 px-4 py-3 lg:rounded-3xl lg:px-5 lg:py-4"
+                whileHover={{ y: -3, scale: 1.01 }}
+                transition={{ duration: 0.25 }}
+              >
                 <p
                   className="text-[32px] leading-10 font-medium tracking-[-0.2px] text-white lg:text-[44px] lg:leading-none lg:tracking-[-0.32px] xl:text-[48px]"
                   style={{ fontFamily: "var(--font-inter-tight)" }}
@@ -133,7 +152,7 @@ export default function AboutCtaSection() {
                 >
                   Business already join us!
                 </p>
-              </article>
+              </motion.article>
             </div>
           </div>
         </div>

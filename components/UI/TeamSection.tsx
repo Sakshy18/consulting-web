@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 type TeamMember = {
   name: string;
@@ -54,20 +57,24 @@ export default function TeamSection() {
 
         <div className="mt-10 grid grid-cols-2 gap-x-3 gap-y-5 lg:grid-cols-2 lg:gap-6 xl:grid-cols-4">
           {members.map((member) => (
-            <article
+            <motion.article
               key={member.name}
               className="group relative h-[232px] overflow-hidden rounded-[16px] p-4 lg:h-[400px] lg:rounded-[32px] lg:p-6"
+              whileHover={{ y: -4 }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
             >
-              <Image
-                src={member.image}
-                alt={`${member.name} portrait`}
-                fill
-                sizes="(max-width: 640px) 50vw, (max-width: 1280px) 50vw, 302px"
-                className={[
-                  "object-cover transition-[filter,transform] duration-500 ease-out lg:grayscale lg:group-hover:grayscale-0 lg:group-hover:scale-[1.02]",
-                  member.imagePosition ?? "object-center",
-                ].join(" ")}
-              />
+              <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.35, ease: "easeOut" }} className="absolute inset-0">
+                <Image
+                  src={member.image}
+                  alt={`${member.name} portrait`}
+                  fill
+                  sizes="(max-width: 640px) 50vw, (max-width: 1280px) 50vw, 302px"
+                  className={[
+                    "object-cover transition-[filter,transform] duration-500 ease-out lg:grayscale lg:group-hover:grayscale-0",
+                    member.imagePosition ?? "object-center",
+                  ].join(" ")}
+                />
+              </motion.div>
 
               <div className="absolute inset-0 hidden bg-linear-to-t from-[#232930] from-7% to-transparent to-36% transition-opacity duration-500 lg:block lg:group-hover:opacity-0" />
               <div className="absolute inset-0 bg-linear-to-t from-[#84cc16] from-2% to-transparent to-40% opacity-100 transition-opacity duration-500 lg:opacity-0 lg:group-hover:opacity-100" />
@@ -86,7 +93,7 @@ export default function TeamSection() {
                   {member.role}
                 </p>
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
       </div>

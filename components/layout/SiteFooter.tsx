@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const quickLinks = [
   { label: "Home", href: "/" },
@@ -64,16 +67,17 @@ export default function SiteFooter() {
 
             <div className="flex items-center gap-3">
               {socialLinks.map((social) => (
-                <Link
-                  key={social.label}
-                  href={social.href}
-                  aria-label={social.label}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-full border border-[#373737] p-2.5 transition-colors hover:bg-[#151a22]"
-                >
-                  <Image src={social.icon} alt="" aria-hidden="true" width={20} height={20} />
-                </Link>
+                <motion.div key={social.label} whileHover={{ y: -2, scale: 1.05 }} transition={{ duration: 0.2 }}>
+                  <Link
+                    href={social.href}
+                    aria-label={social.label}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-full border border-[#373737] p-2.5 transition-colors hover:bg-[#151a22]"
+                  >
+                    <Image src={social.icon} alt="" aria-hidden="true" width={20} height={20} />
+                  </Link>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -86,12 +90,14 @@ export default function SiteFooter() {
               <ul className="space-y-3 lg:space-y-4">
                 {quickLinks.map((item) => (
                   <li key={item.label}>
-                    <Link
-                      href={item.href}
-                      className="font-[var(--font-inter-tight)] text-[14px] leading-5 text-[#babdc2] transition-colors hover:text-white lg:text-[18px] lg:leading-7"
-                    >
-                      {item.label}
-                    </Link>
+                    <motion.div whileHover={{ x: 2 }} transition={{ duration: 0.2 }} className="inline-flex">
+                      <Link
+                        href={item.href}
+                        className="font-[var(--font-inter-tight)] text-[14px] leading-5 text-[#babdc2] transition-colors hover:text-white lg:text-[18px] lg:leading-7"
+                      >
+                        {item.label}
+                      </Link>
+                    </motion.div>
                   </li>
                 ))}
               </ul>
@@ -104,12 +110,14 @@ export default function SiteFooter() {
               <ul className="space-y-3 lg:space-y-4">
                 {companyLinks.map((item) => (
                   <li key={item.label}>
-                    <Link
-                      href={item.href}
-                      className="font-[var(--font-inter-tight)] text-[14px] leading-5 text-[#babdc2] transition-colors hover:text-white lg:text-[18px] lg:leading-7"
-                    >
-                      {item.label}
-                    </Link>
+                    <motion.div whileHover={{ x: 2 }} transition={{ duration: 0.2 }} className="inline-flex">
+                      <Link
+                        href={item.href}
+                        className="font-[var(--font-inter-tight)] text-[14px] leading-5 text-[#babdc2] transition-colors hover:text-white lg:text-[18px] lg:leading-7"
+                      >
+                        {item.label}
+                      </Link>
+                    </motion.div>
                   </li>
                 ))}
               </ul>
@@ -130,12 +138,16 @@ export default function SiteFooter() {
           <div className="flex flex-col gap-6 text-[14px] leading-5 text-[#95989e] sm:flex-row sm:items-center sm:justify-between sm:gap-3 sm:text-[16px] sm:leading-6">
             <p className="order-2 sm:order-1">Copyright © 2026 Execora. All Rights Reserved.</p>
             <div className="order-1 flex items-center gap-8 sm:order-2 sm:gap-6">
-              <Link href="/privacy-policy" className="text-white transition-colors hover:text-[#d6d9de]">
-                Privacy Policy
-              </Link>
-              <Link href="/terms-conditions" className="text-white transition-colors hover:text-[#d6d9de]">
-                Terms &amp; Conditions
-              </Link>
+              <motion.div whileHover={{ x: 2 }} transition={{ duration: 0.2 }}>
+                <Link href="/privacy-policy" className="text-white transition-colors hover:text-[#d6d9de]">
+                  Privacy Policy
+                </Link>
+              </motion.div>
+              <motion.div whileHover={{ x: 2 }} transition={{ duration: 0.2 }}>
+                <Link href="/terms-conditions" className="text-white transition-colors hover:text-[#d6d9de]">
+                  Terms &amp; Conditions
+                </Link>
+              </motion.div>
             </div>
           </div>
         </div>

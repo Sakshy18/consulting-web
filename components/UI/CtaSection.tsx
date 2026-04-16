@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const avatarImages = [
   "/images/png/cta-avatar-1.png",
@@ -41,23 +44,31 @@ export default function CtaSection() {
               you need to move from complexity to confident growth.
             </p>
 
-            <Link
-              href="/contact"
-              className="mt-10 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-[16px] leading-6 font-medium text-[#1a2e05]"
-            >
-              Schedule a Strategy Call
-              <Image
-                src="/images/svg/icon-arrow-right.svg"
-                alt=""
-                aria-hidden="true"
-                width={20}
-                height={20}
-              />
-            </Link>
+            <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }} className="inline-flex">
+              <Link
+                href="/contact"
+                className="group mt-10 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-[16px] leading-6 font-medium text-[#1a2e05]"
+              >
+                Schedule a Strategy Call
+                <motion.span whileHover={{ x: 2 }} transition={{ duration: 0.2 }}>
+                  <Image
+                    src="/images/svg/icon-arrow-right.svg"
+                    alt=""
+                    aria-hidden="true"
+                    width={20}
+                    height={20}
+                  />
+                </motion.span>
+              </Link>
+            </motion.div>
           </div>
 
           <div className="grid w-full gap-2 sm:grid-cols-[1fr_auto] sm:items-stretch lg:max-w-[380px]">
-            <article className="flex min-h-[210px] flex-col justify-between rounded-3xl bg-white/10 px-7 py-6 backdrop-blur-[23.4px] sm:min-h-[240px]">
+            <motion.article
+              className="flex min-h-[210px] flex-col justify-between rounded-3xl bg-white/10 px-7 py-6 backdrop-blur-[23.4px] sm:min-h-[240px]"
+              whileHover={{ y: -3, scale: 1.01 }}
+              transition={{ duration: 0.25 }}
+            >
               <div>
                 <p
                   className="text-[44px] leading-none font-medium tracking-[-0.32px] text-white sm:text-[48px]"
@@ -75,10 +86,14 @@ export default function CtaSection() {
                 height={98}
                 className="mt-5 h-auto w-full max-w-[188px]"
               />
-            </article>
+            </motion.article>
 
             <div className="flex flex-col gap-2">
-              <article className="rounded-3xl bg-white/10 p-6 backdrop-blur-[23.4px]">
+              <motion.article
+                className="rounded-3xl bg-white/10 p-6 backdrop-blur-[23.4px]"
+                whileHover={{ y: -3, scale: 1.01 }}
+                transition={{ duration: 0.25 }}
+              >
                 <div className="flex items-center pr-2.5">
                   {avatarImages.map((avatar) => (
                     <div key={avatar} className="-mr-2.5 h-9 w-9">
@@ -111,9 +126,13 @@ export default function CtaSection() {
                   <br />
                   world-wide.
                 </p>
-              </article>
+              </motion.article>
 
-              <article className="rounded-3xl bg-white/10 px-5 py-4">
+              <motion.article
+                className="rounded-3xl bg-white/10 px-5 py-4"
+                whileHover={{ y: -3, scale: 1.01 }}
+                transition={{ duration: 0.25 }}
+              >
                 <p
                   className="text-[44px] leading-none font-medium tracking-[-0.32px] text-white sm:text-[48px]"
                   style={{ fontFamily: "var(--font-inter-tight)" }}
@@ -126,7 +145,7 @@ export default function CtaSection() {
                 >
                   Business already join us!
                 </p>
-              </article>
+              </motion.article>
             </div>
           </div>
         </div>

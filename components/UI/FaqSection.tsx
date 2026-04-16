@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 
 type FaqItem = {
@@ -62,11 +63,14 @@ export default function FaqSection() {
             const isOpen = openIndex === index;
 
             return (
-              <button
+              <motion.button
                 key={item.question}
                 type="button"
                 onClick={() => setOpenIndex((current) => (current === index ? -1 : index))}
                 className="w-full border-b border-[#f4f5f7] px-6 py-6 text-left"
+                whileHover={{ y: -1 }}
+                whileTap={{ scale: 0.998 }}
+                transition={{ duration: 0.2 }}
               >
                 <div className="flex items-center justify-between gap-4">
                   <p
@@ -75,18 +79,29 @@ export default function FaqSection() {
                   >
                     {item.question}
                   </p>
-                  <span className="text-[24px] leading-none text-[#191715]">{isOpen ? "−" : "+"}</span>
+                  <motion.span
+                    className="text-[24px] leading-none text-[#191715]"
+                    animate={{ rotate: isOpen ? 180 : 0, scale: isOpen ? 1.06 : 1 }}
+                    transition={{ duration: 0.22 }}
+                  >
+                    {isOpen ? "−" : "+"}
+                  </motion.span>
                 </div>
 
-                <div
-                  className={[
-                    "grid transition-all duration-300 ease-out",
-                    isOpen ? "mt-4 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0",
-                  ].join(" ")}
-                >
-                  <p className="overflow-hidden pr-10 text-[16px] leading-6 text-[#33373d]">{item.answer}</p>
-                </div>
-              </button>
+                <AnimatePresence initial={false}>
+                  {isOpen ? (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0, marginTop: 0 }}
+                      animate={{ height: "auto", opacity: 1, marginTop: 16 }}
+                      exit={{ height: 0, opacity: 0, marginTop: 0 }}
+                      transition={{ duration: 0.24, ease: "easeOut" }}
+                      className="overflow-hidden"
+                    >
+                      <p className="pr-10 text-[16px] leading-6 text-[#33373d]">{item.answer}</p>
+                    </motion.div>
+                  ) : null}
+                </AnimatePresence>
+              </motion.button>
             );
           })}
         </div>
@@ -102,13 +117,17 @@ export default function FaqSection() {
             Can&apos;t find the answer you&apos;re looking for? Please chat to our friendly team!
           </p>
 
-          <Link
-            href="/contact"
-            className="mt-10 inline-flex items-center gap-2 text-[24px] leading-6 font-medium text-[#1a2e05] sm:text-[16px]"
-          >
-            Schedule a Call
-            <Image src="/images/svg/icon-arrow-right.svg" alt="" aria-hidden="true" width={20} height={20} />
-          </Link>
+          <motion.div whileHover={{ x: 2 }} transition={{ duration: 0.2 }} className="inline-flex">
+            <Link
+              href="/contact"
+              className="mt-10 inline-flex items-center gap-2 text-[24px] leading-6 font-medium text-[#1a2e05] sm:text-[16px]"
+            >
+              Schedule a Call
+              <motion.span whileHover={{ x: 2 }} transition={{ duration: 0.2 }}>
+                <Image src="/images/svg/icon-arrow-right.svg" alt="" aria-hidden="true" width={20} height={20} />
+              </motion.span>
+            </Link>
+          </motion.div>
         </div>
       </div>
     </section>

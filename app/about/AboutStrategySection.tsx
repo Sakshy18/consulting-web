@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import AboutStrategyMobileAccordion from "./AboutStrategyMobileAccordion";
 
 type AboutPrinciple = {
   title: string;
@@ -51,10 +52,17 @@ export default function AboutStrategySection() {
 
           <Link
             href="/contact"
-            className="mt-10 inline-flex items-center gap-2 rounded-full border border-[#e8eaed] px-5 py-3 text-center text-[16px] leading-6 font-medium text-[#070a0f]"
+            className="group mt-10 inline-flex items-center gap-2 rounded-full border border-[#e8eaed] px-5 py-3 text-center text-[16px] leading-6 font-medium text-[#070a0f] transition-transform duration-200 hover:-translate-y-0.5"
           >
             Contact Us
-            <Image src="/images/svg/icon-arrow-right.svg" alt="" aria-hidden="true" width={20} height={20} />
+            <Image
+              src="/images/svg/icon-arrow-right.svg"
+              alt=""
+              aria-hidden="true"
+              width={20}
+              height={20}
+              className="transition-transform duration-200 group-hover:translate-x-0.5"
+            />
           </Link>
         </div>
 
@@ -69,29 +77,7 @@ export default function AboutStrategySection() {
         </div>
 
         <div className="w-full lg:max-w-[378px]">
-          <div className="space-y-1 lg:hidden">
-            {aboutPrinciples.map((principle, index) => (
-              <details
-                key={principle.title}
-                open={index === 0 ? true : undefined}
-                className="group border-b border-[#f4f5f7] py-3 last:border-b-0"
-              >
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4">
-                  <h3
-                    className="text-[16px] leading-6 font-medium text-[#182226]"
-                    style={{ fontFamily: "var(--font-inter-tight)" }}
-                  >
-                    {principle.title}
-                  </h3>
-                  <span className="text-[24px] leading-none text-[#182226] group-open:hidden">+</span>
-                  <span className="hidden text-[24px] leading-none text-[#182226] group-open:inline">
-                    −
-                  </span>
-                </summary>
-                <p className="mt-[6px] text-[14px] leading-5 text-[#3e4447]">{principle.description}</p>
-              </details>
-            ))}
-          </div>
+          <AboutStrategyMobileAccordion principles={aboutPrinciples} />
 
           <div className="hidden space-y-16 lg:block">
             {aboutPrinciples.map((principle) => (
