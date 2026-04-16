@@ -2,7 +2,8 @@ import AboutHeroSection from "./sections/AboutHeroSection";
 import TeamSection from "@/components/UI/TeamSection";
 import TrustedPartnersSection from "@/components/UI/TrustedPartnersSection";
 import AboutStrategySection from "./sections/AboutStrategySection";
-import CtaSection from "@/components/UI/CtaSection";
+import AboutOperationalExcellenceSection from "./sections/AboutOperationalExcellenceSection";
+import AboutCtaSection from "./sections/AboutCtaSection";
 import FaqSection from "@/components/UI/FaqSection";
 
 export default function AboutPage() {
@@ -12,7 +13,8 @@ export default function AboutPage() {
       <TeamSection />
       <TrustedPartnersSection />
       <AboutStrategySection />
-      <CtaSection/>
+      <AboutOperationalExcellenceSection />
+      <AboutCtaSection />
       <FaqSection/>
     </main>
   );

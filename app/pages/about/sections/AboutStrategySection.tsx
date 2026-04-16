@@ -26,19 +26,22 @@ const aboutPrinciples: AboutPrinciple[] = [
 
 export default function AboutStrategySection() {
   return (
-    <section className="w-full bg-[#ffffff] px-4 pb-16 pt-10 sm:px-8 lg:px-20 lg:pb-20 lg:pt-[60px]">
-      <div className="mx-auto flex w-full max-w-[1280px] flex-col gap-10 lg:flex-row lg:items-center lg:gap-10">
+    <section className="w-full bg-[#ffffff] px-5 pb-10 pt-10 sm:px-8 sm:pb-16 lg:px-20 lg:pb-20 lg:pt-[60px]">
+      <div className="mx-auto flex w-full max-w-[1280px] flex-col gap-5 lg:flex-row lg:items-center lg:gap-10">
         <div className="w-full lg:max-w-[416px]">
           <h2
-            className="text-[40px] leading-[48px] font-medium tracking-[-1.2px] text-[#182226]"
+            className="text-[32px] leading-10 font-medium tracking-[-0.32px] text-[#182226] lg:text-[40px] lg:leading-[48px] lg:tracking-[-1.2px]"
             style={{ fontFamily: "var(--font-inter-tight)" }}
           >
-            Strategic Thinking.
-            <br />
-            Sustainable Growth.
+            <span className="lg:hidden">Strategic Thinking. Sustainable Growth.</span>
+            <span className="hidden lg:inline">
+              Strategic Thinking.
+              <br />
+              Sustainable Growth.
+            </span>
           </h2>
           <p
-            className="mt-2 text-[18px] leading-7 text-[#3e4447]"
+            className="mt-1.5 text-[16px] leading-6 text-[#3e4447] lg:mt-2 lg:text-[18px] lg:leading-7"
             style={{ fontFamily: "var(--font-inter-tight)" }}
           >
             We are a business consulting firm dedicated to helping organizations move from
@@ -55,7 +58,7 @@ export default function AboutStrategySection() {
           </Link>
         </div>
 
-        <div className="relative h-[420px] w-full overflow-hidden rounded-[32px] sm:h-[510px] lg:w-[416px] lg:rounded-[40px]">
+        <div className="relative h-[260px] w-full overflow-hidden rounded-[20px] sm:h-[510px] sm:rounded-[32px] lg:w-[416px] lg:rounded-[40px]">
           <Image
             src="/images/png/about-strategic-main.png"
             alt="Consultant leaning on a desk in workspace"
@@ -66,18 +69,44 @@ export default function AboutStrategySection() {
           />
         </div>
 
-        <div className="w-full space-y-10 lg:max-w-[378px] lg:space-y-16">
-          {aboutPrinciples.map((principle) => (
-            <article key={principle.title}>
-              <h3
-                className="text-[36px] leading-[1.2] font-medium tracking-[-0.2px] text-[#182226] sm:text-[20px] sm:leading-7"
-                style={{ fontFamily: "var(--font-inter-tight)" }}
+        <div className="w-full lg:max-w-[378px]">
+          <div className="space-y-1 lg:hidden">
+            {aboutPrinciples.map((principle, index) => (
+              <details
+                key={principle.title}
+                open={index === 0 ? true : undefined}
+                className="group border-b border-[#f4f5f7] py-3 last:border-b-0"
               >
-                {principle.title}
-              </h3>
-              <p className="mt-3 text-[16px] leading-6 text-[#3e4447]">{principle.description}</p>
-            </article>
-          ))}
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4">
+                  <h3
+                    className="text-[16px] leading-6 font-medium text-[#182226]"
+                    style={{ fontFamily: "var(--font-inter-tight)" }}
+                  >
+                    {principle.title}
+                  </h3>
+                  <span className="text-[24px] leading-none text-[#182226] group-open:hidden">+</span>
+                  <span className="hidden text-[24px] leading-none text-[#182226] group-open:inline">
+                    −
+                  </span>
+                </summary>
+                <p className="mt-[6px] text-[14px] leading-5 text-[#3e4447]">{principle.description}</p>
+              </details>
+            ))}
+          </div>
+
+          <div className="hidden space-y-16 lg:block">
+            {aboutPrinciples.map((principle) => (
+              <article key={principle.title}>
+                <h3
+                  className="text-[20px] leading-7 font-medium tracking-[-0.2px] text-[#182226]"
+                  style={{ fontFamily: "var(--font-inter-tight)" }}
+                >
+                  {principle.title}
+                </h3>
+                <p className="mt-3 text-[16px] leading-6 text-[#3e4447]">{principle.description}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>
