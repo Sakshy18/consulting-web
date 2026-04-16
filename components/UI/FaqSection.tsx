@@ -42,44 +42,22 @@ export default function FaqSection() {
 
   return (
     <section className="w-full bg-white px-4 py-14 sm:px-8 lg:px-20 lg:py-20">
-      <div className="mx-auto flex w-full max-w-[1280px] flex-col gap-10 lg:flex-row lg:justify-between">
-        <div className="flex w-full max-w-[506px] flex-col justify-between">
-          <div>
-            <h2
-              className="text-[40px] leading-[48px] font-medium tracking-[-1.2px] text-[#191715]"
-              style={{ fontFamily: "var(--font-inter-tight)" }}
-            >
-              Frequently
-              <br />
-              Asked Questions
-            </h2>
-            <p className="mt-2 max-w-[459px] text-[18px] leading-7 text-[#373a46]/80">
-              Here are answers to common questions about us.
-            </p>
-          </div>
-
-          <div className="mt-14 max-w-[421px] lg:mt-[96px]">
-            <h3
-              className="text-[24px] leading-8 font-medium tracking-[-0.312px] text-[#191715]"
-              style={{ fontFamily: "var(--font-inter-tight)" }}
-            >
-              Still have questions?
-            </h3>
-            <p className="mt-2 text-[16px] leading-6 text-[#373a46]/90">
-              Can&apos;t find the answer you&apos;re looking for? Please chat to our friendly team!
-            </p>
-
-            <Link
-              href="/contact"
-              className="mt-10 inline-flex items-center gap-2 text-[24px] leading-6 font-medium text-[#1a2e05] sm:text-[16px]"
-            >
-              Schedule a Call
-              <Image src="/images/svg/icon-arrow-right.svg" alt="" aria-hidden="true" width={20} height={20} />
-            </Link>
-          </div>
+      <div className="mx-auto grid w-full max-w-[1280px] gap-10 lg:grid-cols-[minmax(0,506px)_minmax(0,608px)] lg:justify-between">
+        <div className="w-full max-w-[506px] lg:col-start-1 lg:row-start-1">
+          <h2
+            className="text-[40px] leading-[48px] font-medium tracking-[-1.2px] text-[#191715]"
+            style={{ fontFamily: "var(--font-inter-tight)" }}
+          >
+            Frequently
+            <br />
+            Asked Questions
+          </h2>
+          <p className="mt-2 max-w-[459px] text-[18px] leading-7 text-[#373a46]/80">
+            Here are answers to common questions about us.
+          </p>
         </div>
 
-        <div className="w-full max-w-[608px]">
+        <div className="w-full max-w-[608px] lg:col-start-2 lg:row-span-2 lg:row-start-1">
           {faqs.map((item, index) => {
             const isOpen = openIndex === index;
 
@@ -111,6 +89,26 @@ export default function FaqSection() {
               </button>
             );
           })}
+        </div>
+
+        <div className="w-full max-w-[421px] lg:col-start-1 lg:row-start-2 lg:mt-[96px]">
+          <h3
+            className="text-[24px] leading-8 font-medium tracking-[-0.312px] text-[#191715]"
+            style={{ fontFamily: "var(--font-inter-tight)" }}
+          >
+            Still have questions?
+          </h3>
+          <p className="mt-2 text-[16px] leading-6 text-[#373a46]/90">
+            Can&apos;t find the answer you&apos;re looking for? Please chat to our friendly team!
+          </p>
+
+          <Link
+            href="/contact"
+            className="mt-10 inline-flex items-center gap-2 text-[24px] leading-6 font-medium text-[#1a2e05] sm:text-[16px]"
+          >
+            Schedule a Call
+            <Image src="/images/svg/icon-arrow-right.svg" alt="" aria-hidden="true" width={20} height={20} />
+          </Link>
         </div>
       </div>
     </section>
