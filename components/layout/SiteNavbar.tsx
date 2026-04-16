@@ -79,7 +79,7 @@ export default function SiteNavbar() {
           <motion.div whileHover={{ y: -1, scale: 1.01 }} transition={{ duration: 0.2 }}>
             <Link
               href="/contact"
-              className="rounded-full border border-[#e8eaed] px-5 py-3 text-center text-[16px] leading-6 font-medium text-[#070a0f] transition-colors hover:bg-[#f6f7f8]"
+              className="inline-flex items-center justify-center rounded-full border border-[#e8eaed] px-5 py-3 text-center text-[16px] leading-6 font-medium text-[#070a0f] transition-colors hover:bg-[#f6f7f8]"
             >
               Contact Us
             </Link>
@@ -88,7 +88,7 @@ export default function SiteNavbar() {
             <Link
               href="tel:+1234567890"
               aria-label="Call Execora"
-              className="rounded-full border border-[#e8eaed] p-3.5 transition-colors hover:bg-[#f6f7f8]"
+              className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#e8eaed] transition-colors hover:bg-[#f6f7f8]"
             >
               <Image
                 src="/images/svg/icon-call.svg"
@@ -132,8 +132,15 @@ export default function SiteNavbar() {
             transition={{ duration: 0.24, ease: "easeOut" }}
             className="overflow-hidden md:hidden"
           >
-            <div className="border-t border-[#eaecf0]/80 bg-white px-4 pb-4 pt-3 sm:px-8">
-              <nav aria-label="Mobile primary" className="flex flex-col gap-1.5">
+            <div className="border-t border-[#eaecf0]/80 bg-white px-4 pb-5 pt-4 sm:px-8">
+              <nav
+                aria-label="Mobile primary"
+                className="rounded-[24px] border border-[#eaecf0] bg-[#fbfbfc] p-3"
+              >
+                <p className="px-3 pb-2 text-[12px] leading-4 font-medium tracking-[0.08em] text-[#8b9097] uppercase">
+                  Navigation
+                </p>
+                <div className="flex flex-col gap-1">
                 {navItems.map((item, index) => (
                   <motion.div
                     key={item.label}
@@ -144,17 +151,22 @@ export default function SiteNavbar() {
                     <Link
                       href={item.href}
                       onClick={handleCloseMenu}
-                      className="rounded-xl px-3 py-2 text-[16px] leading-6 font-medium text-[#484b52] transition-colors hover:bg-[#f6f7f8] hover:text-[#070a0f]"
+                      className="flex items-center justify-between rounded-[14px] px-3 py-2.5 text-[16px] leading-6 font-medium text-[#484b52] transition-colors hover:bg-white hover:text-[#070a0f]"
                     >
-                      {item.label}
+                      <span>{item.label}</span>
+                      <span aria-hidden="true" className="text-[#a2a7af]">
+                        &rarr;
+                      </span>
                     </Link>
                   </motion.div>
                 ))}
+                </div>
+
                 <motion.div initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.2, delay: 0.12 }}>
                   <Link
                     href="/contact"
                     onClick={handleCloseMenu}
-                    className="mt-2 inline-flex items-center justify-center rounded-full border border-[#e8eaed] px-5 py-3 text-center text-[16px] leading-6 font-medium text-[#070a0f] transition-colors hover:bg-[#f6f7f8]"
+                    className="mt-3 inline-flex w-full items-center justify-center rounded-full bg-[#84cc16] px-5 py-3 text-center text-[16px] leading-6 font-semibold text-white transition-colors hover:bg-[#78b814]"
                   >
                     Contact Us
                   </Link>
@@ -163,8 +175,15 @@ export default function SiteNavbar() {
                   <Link
                     href="tel:+1234567890"
                     onClick={handleCloseMenu}
-                    className="inline-flex items-center justify-center rounded-full border border-[#e8eaed] px-5 py-3 text-center text-[16px] leading-6 font-medium text-[#070a0f] transition-colors hover:bg-[#f6f7f8]"
+                    className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#dfe3e8] bg-white px-5 py-3 text-center text-[16px] leading-6 font-medium text-[#070a0f] transition-colors hover:bg-[#f6f7f8]"
                   >
+                    <Image
+                      src="/images/svg/icon-call.svg"
+                      alt=""
+                      aria-hidden="true"
+                      width={16}
+                      height={16}
+                    />
                     Call Us
                   </Link>
                 </motion.div>

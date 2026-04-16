@@ -73,7 +73,7 @@ export default function SiteFooter() {
                     aria-label={social.label}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-full border border-[#373737] p-2.5 transition-colors hover:bg-[#151a22]"
+                    className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#373737] transition-colors hover:bg-[#151a22]"
                   >
                     <Image src={social.icon} alt="" aria-hidden="true" width={20} height={20} />
                   </Link>
