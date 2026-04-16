@@ -132,7 +132,6 @@ export default function ArticleDetailsPage({ article }: ArticleDetailsPageProps)
                       src={block.image}
                       alt={block.alt}
                       fill
-                      loading="eager"
                       className="object-cover"
                       sizes="(max-width: 1024px) 100vw, 888px"
                     />

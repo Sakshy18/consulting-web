@@ -116,7 +116,6 @@ export default function HomeTestimonialsSection() {
                 <div>
                   <div className="flex items-center gap-3">
                     <Image
-                      loading="eager"
                       src={item.companyMark}
                       alt=""
                       aria-hidden="true"
@@ -125,7 +124,6 @@ export default function HomeTestimonialsSection() {
                       className="h-14 w-auto"
                     />
                     <Image
-                      loading="eager"
                       src={item.companyText}
                       alt={item.company}
                       width={item.textWidth}

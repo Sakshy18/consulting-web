@@ -62,7 +62,7 @@ export default function TeamSection() {
                 src={member.image}
                 alt={`${member.name} portrait`}
                 fill
-                sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 302px"
+                sizes="(max-width: 640px) 50vw, (max-width: 1280px) 50vw, 302px"
                 className={[
                   "object-cover transition-[filter,transform] duration-500 ease-out lg:grayscale lg:group-hover:grayscale-0 lg:group-hover:scale-[1.02]",
                   member.imagePosition ?? "object-center",

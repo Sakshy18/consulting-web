@@ -172,7 +172,7 @@ export default function ArticlesInsightsSection() {
                     fill
                     loading={index === 0 ? "eager" : "lazy"}
                     className="object-cover"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 400px"
+                    sizes="(max-width: 768px) 50vw, (max-width: 1280px) 50vw, 400px"
                   />
                 </div>
                 <div className="px-0 pt-3 md:px-3 md:pt-4">

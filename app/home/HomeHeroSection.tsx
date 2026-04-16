@@ -12,7 +12,6 @@ export default function HomeHeroSection() {
     <section className="w-full px-4 pb-8 pt-4 sm:px-8 lg:px-8">
       <div className="relative mx-auto h-[760px] w-full max-w-[1376px] overflow-hidden rounded-[34px] sm:h-[680px] lg:h-[712px] lg:rounded-[42px]">
         <Image
-        loading="eager"
           src="/images/svg/home-hero-main.svg"
           alt="Consultant smiling in office"
           fill

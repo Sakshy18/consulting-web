@@ -63,7 +63,6 @@ export default function AboutStrategySection() {
             src="/images/png/about-strategic-main.png"
             alt="Consultant leaning on a desk in workspace"
             fill
-            loading="eager"
             className="object-cover"
             sizes="(max-width: 1024px) 100vw, 416px"
           />

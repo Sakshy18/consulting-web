@@ -12,7 +12,6 @@ export default function CaseStudiesCtaSection() {
               alt=""
               aria-hidden="true"
               fill
-              loading="eager"
               className="object-cover"
               sizes="(max-width: 1280px) 100vw, 1280px"
             />

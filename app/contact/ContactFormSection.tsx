@@ -147,7 +147,6 @@ export default function ContactFormSection() {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,572px)_minmax(0,1fr)] lg:gap-20">
           <div className="order-2 relative min-h-[420px] overflow-hidden rounded-[32px] sm:min-h-[520px] lg:order-1 lg:min-h-[659px] lg:rounded-[40px]">
             <Image
-            loading="eager"
               src="/images/png/services-guidance-main.png"
               alt="Consultant smiling while working in a modern office"
               fill
