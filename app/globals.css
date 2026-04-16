@@ -31,8 +31,26 @@ body {
   will-change: transform;
 }
 
+@keyframes trustedPartnersCarousel {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.trusted-partners-carousel-track {
+  animation: trustedPartnersCarousel 18s linear infinite;
+  will-change: transform;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .about-gallery-carousel-track {
+    animation: none;
+  }
+
+  .trusted-partners-carousel-track {
     animation: none;
   }
 }
