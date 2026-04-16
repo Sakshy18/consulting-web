@@ -91,7 +91,7 @@ export default function AboutHeroSection() {
                     fill
                     loading={shouldEagerLoad ? "eager" : "lazy"}
                     className="object-cover"
-                    sizes="392px"
+                    sizes="(max-width: 640px) 300px, (max-width: 1024px) 340px, 392px"
                   />
                 </div>
               );
@@ -100,11 +100,11 @@ export default function AboutHeroSection() {
 
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-y-0 left-0 w-8 bg-linear-to-r from-white via-white/95 to-transparent sm:w-10"
+            className="pointer-events-none absolute inset-y-0 left-0 hidden w-8 bg-linear-to-r from-white via-white/95 to-transparent sm:block sm:w-10"
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-linear-to-l from-white via-white/95 to-transparent sm:w-10"
+            className="pointer-events-none absolute inset-y-0 right-0 hidden w-8 bg-linear-to-l from-white via-white/95 to-transparent sm:block sm:w-10"
           />
         </div>
       </div>
