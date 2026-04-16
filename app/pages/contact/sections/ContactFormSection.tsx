@@ -145,7 +145,7 @@ export default function ContactFormSection() {
         </div>
 
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,572px)_minmax(0,1fr)] lg:gap-20">
-          <div className="relative min-h-[420px] overflow-hidden rounded-[32px] sm:min-h-[520px] lg:min-h-[659px] lg:rounded-[40px]">
+          <div className="order-2 relative min-h-[420px] overflow-hidden rounded-[32px] sm:min-h-[520px] lg:order-1 lg:min-h-[659px] lg:rounded-[40px]">
             <Image
             loading="eager"
               src="/images/png/services-guidance-main.png"
@@ -194,7 +194,7 @@ export default function ContactFormSection() {
           <form
             noValidate
             onSubmit={handleSubmit}
-            className="rounded-[32px] bg-[#fafafa] p-6 sm:p-8 lg:rounded-[40px] lg:p-10"
+            className="order-1 rounded-[32px] bg-[#fafafa] p-6 sm:p-8 lg:order-2 lg:rounded-[40px] lg:p-10"
           >
             <div className="space-y-4">
               <div>
