@@ -161,11 +161,11 @@ export default function ArticlesInsightsSection() {
           </div>
         </article>
 
-        <div id="all-articles" className="grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-2 xl:grid-cols-3">
+        <div id="all-articles" className="grid grid-cols-2 gap-x-3 gap-y-8 md:gap-x-6 md:gap-y-10 xl:grid-cols-3">
           {articles.map((article, index) => (
             <article key={article.title} className="w-full">
               <Link href={`/articles/${article.slug}`} className="block">
-                <div className="relative h-[234px] w-full overflow-hidden rounded-t-[32px]">
+                <div className="relative h-[98px] w-full overflow-hidden rounded-t-[16px] md:h-[234px] md:rounded-t-[32px]">
                   <Image
                     src={article.cardImage}
                     alt={article.title}
@@ -175,14 +175,16 @@ export default function ArticlesInsightsSection() {
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 400px"
                   />
                 </div>
-                <div className="px-3 pt-4">
+                <div className="px-0 pt-3 md:px-3 md:pt-4">
                   <h3
-                    className="max-w-[330px] text-[24px] leading-8 font-medium tracking-[-0.312px] text-[#191c21]"
+                    className="text-[14px] leading-5 font-medium text-[#191c21] md:max-w-[330px] md:text-[24px] md:leading-8 md:tracking-[-0.312px]"
                     style={{ fontFamily: "var(--font-inter-tight)" }}
                   >
                     {article.title}
                   </h3>
-                  <p className="mt-3 text-[14px] leading-5 text-[#33373d]">{article.date}</p>
+                  <p className="mt-3 text-[12px] leading-4 text-[#6e737a] md:text-[14px] md:leading-5 md:text-[#33373d]">
+                    {article.date}
+                  </p>
                 </div>
               </Link>
             </article>
