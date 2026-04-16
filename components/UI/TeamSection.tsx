@@ -38,25 +38,25 @@ const members: TeamMember[] = [
 
 export default function TeamSection() {
   return (
-    <section className="w-full bg-[#fafafa] px-4 py-14 sm:px-8 lg:px-20 lg:py-[100px]">
+    <section className="w-full bg-[#fafafa] px-5 py-10 sm:px-8 lg:px-20 lg:py-[100px]">
       <div className="mx-auto w-full max-w-[1280px]">
         <header className="text-center">
           <h2
-            className="text-[40px] leading-[48px] font-medium tracking-[-1.2px] text-[#070a0f]"
+            className="text-[32px] leading-10 font-medium tracking-[-0.32px] text-[#070a0f] lg:text-[40px] lg:leading-[48px] lg:tracking-[-1.2px]"
             style={{ fontFamily: "var(--font-inter-tight)" }}
           >
             Meet our team
           </h2>
-          <p className="mx-auto mt-1.5 max-w-[543px] text-[16px] leading-6 text-[#33373d]">
+          <p className="mx-auto mt-[5px] max-w-[543px] text-[16px] leading-6 text-[#33373d]">
             Experienced minds. Structured solutions. Sustainable results.
           </p>
         </header>
 
-        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-10 grid grid-cols-2 gap-x-3 gap-y-5 lg:grid-cols-2 lg:gap-6 xl:grid-cols-4">
           {members.map((member) => (
             <article
               key={member.name}
-              className="group relative h-[400px] overflow-hidden rounded-[32px] p-6"
+              className="group relative h-[232px] overflow-hidden rounded-[16px] p-4 lg:h-[400px] lg:rounded-[32px] lg:p-6"
             >
               <Image
                 src={member.image}
@@ -64,21 +64,21 @@ export default function TeamSection() {
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 302px"
                 className={[
-                  "object-cover grayscale transition-[filter,transform] duration-500 ease-out group-hover:grayscale-0 group-hover:scale-[1.02]",
+                  "object-cover transition-[filter,transform] duration-500 ease-out lg:grayscale lg:group-hover:grayscale-0 lg:group-hover:scale-[1.02]",
                   member.imagePosition ?? "object-center",
                 ].join(" ")}
               />
 
-              <div className="absolute inset-0 bg-linear-to-t from-[#232930] from-7% to-transparent to-36% transition-opacity duration-500 group-hover:opacity-0" />
-              <div className="absolute inset-0 bg-linear-to-t from-[#84cc16] from-2% to-transparent to-40% opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              <div className="absolute inset-0 hidden bg-linear-to-t from-[#232930] from-7% to-transparent to-36% transition-opacity duration-500 lg:block lg:group-hover:opacity-0" />
+              <div className="absolute inset-0 bg-linear-to-t from-[#84cc16] from-2% to-transparent to-40% opacity-100 transition-opacity duration-500 lg:opacity-0 lg:group-hover:opacity-100" />
 
-              <div className="absolute bottom-6 left-6 right-6 z-10">
-                <h3 className="text-[36px] leading-[1.4] font-medium tracking-[-0.5px] text-white sm:text-[24px]">
+              <div className="absolute bottom-4 left-4 right-4 z-10 lg:bottom-6 lg:left-6 lg:right-6">
+                <h3 className="text-[16px] leading-6 font-medium tracking-normal text-white lg:text-[24px] lg:leading-[1.4] lg:tracking-[-0.5px]">
                   {member.name}
                 </h3>
                 <p
                   className={[
-                    "text-[14px] leading-normal transition-colors duration-500",
+                    "text-[12px] leading-4 transition-colors duration-500 lg:text-[14px] lg:leading-normal",
                     member.roleHighlight ? "text-[#d9f99d]" : "text-[#aaaaaa]",
                     "group-hover:text-[#d9f99d]",
                   ].join(" ")}
